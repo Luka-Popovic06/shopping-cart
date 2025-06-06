@@ -20,3 +20,26 @@ h2 {
   height: 700px;
   padding: 20px;
 }
+/*Select box*/
+.select-box {
+  background-color: #4d4a4a;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+label {
+  color: white;
+  margin-top: 8px;
+  font-size: 18px;
+  margin-right: 5px;
+  margin-left: 8px;
+}
+select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+/*car box*/
