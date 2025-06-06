@@ -14,3 +14,9 @@ h2 {
   margin-bottom: 25px;
   margin-top: 25px;
 }
+.container {
+  background-color: antiquewhite;
+  width: 70%;
+  height: 700px;
+  padding: 20px;
+}
