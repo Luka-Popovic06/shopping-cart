@@ -90,3 +90,6 @@ img {
   width: 320px;
   height: 220px;
 }
+.hidden {
+  display: none;
+}
