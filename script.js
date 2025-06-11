@@ -105,3 +105,43 @@ let cars = [
     image: 'subaru 10.png',
   },
 ];
+function showCar(filter) {
+  let carFilter = cars;
+  const allCars = cars;
+
+  if (filter === 'all') {
+    carFilter = allCars;
+  } else if (filter === 'availabel-no') {
+    carFilter = cars.filter(car => car.available === 'no');
+  } else if (filter === 'available-yes') {
+    carFilter = cars.filter(car => car.available === 'yes');
+  }
+
+  carsBox.innerHTML = '';
+
+  carFilter.forEach(car => {
+    carsBox.innerHTML += `
+      <div class="car" id="${car.id}">
+        <div class="first-box">
+          <h1 class="h1">${car.name}</h1>
+          <img class="pictures" src="${car.image}" alt="${car.name}" />
+        </div>
+        <div class="second-box">
+          <p><strong>Brand:</strong> ${car.brand}</p>
+          <p><strong>Manufactured Year:</strong> ${car.manufacturedYear}</p>
+          <p><strong>Doors:</strong> ${car.doors}</p>
+          <p><strong>Price:</strong> <span class="price">$${
+            car.price
+          }</span></p>
+        </div>
+        <p class="${car.available === 'yes' ? 'yes-box' : 'no-box'}">
+          <strong>Available:</strong> <span class="${
+            car.available === 'yes' ? 'yes' : 'no'
+          }">${car.available === 'yes' ? 'Yes' : 'No'}</span>
+        </p>
+        <button type="button" class="btn-delete">Delete</button>
+      </div>
+    `;
+    carsBox.style.gridTemplateRows = `repeat(${car}, 300px)`;
+  });
+}
