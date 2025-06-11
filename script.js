@@ -145,3 +145,18 @@ function showCar(filter) {
     carsBox.style.gridTemplateRows = `repeat(${car}, 300px)`;
   });
 }
+function sortCar(s) {
+  if (s === 'az') {
+    cars.sort((a, b) => a.id - b.id);
+  } else if (s === 'za') {
+    cars.sort((a, b) => b.id - a.id);
+  } else if (s === 'low') {
+    cars.sort((a, b) => a.price - b.price);
+  } else if (s === 'high') {
+    cars.sort((a, b) => b.price - a.price);
+  }
+  showCar();
+}
+
+// Prvi prikaz (svi automobili)
+showCar('all');
