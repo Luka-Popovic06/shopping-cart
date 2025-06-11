@@ -160,3 +160,17 @@ function sortCar(s) {
 
 // Prvi prikaz (svi automobili)
 showCar('all');
+sort.addEventListener('change', function (e) {
+  sortCar(e.target.value);
+});
+// Promena filtera
+availabilityValue.addEventListener('change', function (e) {
+  showCar(e.target.value);
+});
+carsBox.addEventListener('click', function (e) {
+  if (e.target.closest('.btn-delete')) {
+    let element = e.target.closest('.car');
+    let selectElement = document.getElementById(element.id);
+    selectElement.classList.add('hidden');
+  }
+});
