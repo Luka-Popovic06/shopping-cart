@@ -155,16 +155,19 @@ function sortCar(s) {
   } else if (s === 'high') {
     cars.sort((a, b) => b.price - a.price);
   }
-  showCar();
+  showCar(availabilityC);
 }
+let availabilityC = '';
 
-// Prvi prikaz (svi automobili)
-showCar('all');
+if (availabilityC === '') {
+  showCar('all');
+}
 sort.addEventListener('change', function (e) {
   sortCar(e.target.value);
 });
-// Promena filtera
+
 availabilityValue.addEventListener('change', function (e) {
+  availabilityC = e.target.value;
   showCar(e.target.value);
 });
 carsBox.addEventListener('click', function (e) {
